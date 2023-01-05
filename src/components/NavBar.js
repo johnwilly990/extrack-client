@@ -39,7 +39,7 @@ const NavBar = () => {
         <div
           className={`${
             isActive === true
-              ? "flex flex-col items-center md:hidden"
+              ? "flex flex-col items-center z-10 absolute bg-forestGreen w-full h-[25vh] md:hidden"
               : "hidden"
           }`}
         >
