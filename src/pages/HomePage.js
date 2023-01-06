@@ -1,6 +1,7 @@
 import NavBar from "../components/NavBar";
 import Hero from "../components/Hero";
 import HowItWorks from "../components/HowItWorks";
+import Reviews from "../components/Reviews/Reviews";
 import { works } from "../constants";
 import { howItWorks } from "../constants";
 import time from "../assets/images/time.jpg";
@@ -10,6 +11,7 @@ const LandingPage = () => {
     <section className="relative ">
       <NavBar />
       <Hero />
+      {/* How it works */}
       <div className="px-4 py-8 md:flex md:px-[32px] md:py-[48px] md:m-auto lg:px-[130px] lg:max-w-[1280px]">
         <div className="md:flex md:flex-col md:w-1/2 md:pr-8">
           <h2 className="text-2xl font-bold text-center mb-8 md:text-left">
@@ -30,6 +32,8 @@ const LandingPage = () => {
           ))}
         </div>
       </div>
+      {/* Reviews */}
+      <Reviews />
     </section>
   );
 };
