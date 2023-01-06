@@ -1,3 +1,7 @@
+import alisha from "../assets/images/alisha-li.jpg";
+import robert from "../assets/images/robert-burke.jpg";
+import john from "../assets/images/john-peng.jpg";
+
 export const heroValues = {
   title: "Welcome to ExTrack!",
   description:
@@ -29,5 +33,29 @@ export const works = [
     title: "Real Time Update",
     description:
       "Whenever an update to your expenses happen, the budget remaining for the month is updated in real time.",
+  },
+];
+
+export const reviews = [
+  {
+    id: 1,
+    image: alisha,
+    name: "Alisha Li",
+    review:
+      "ExTrack helped me to really understand where my money is going towards, I was able to cut down my costs significantly!",
+  },
+  {
+    id: 2,
+    image: robert,
+    name: "Robert Burke",
+    review:
+      "ExTrack helped me to really understand where my money is going towards, I was able to cut down my costs significantly!",
+  },
+  {
+    id: 3,
+    image: john,
+    name: "John Peng",
+    review:
+      "ExTrack helped me to really understand where my money is going towards, I was able to cut down my costs significantly!",
   },
 ];
