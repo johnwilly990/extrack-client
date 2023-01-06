@@ -1,4 +1,4 @@
-const HowItWorks = ({ id, title, description }) => {
+const Difference = ({ id, title, description }) => {
   return (
     <div className="flex flex-col items-start mx-4 mb-6">
       <div className="rounded-l-full bg-babyGreen mb-8">
@@ -14,4 +14,4 @@ const HowItWorks = ({ id, title, description }) => {
   );
 };
 
-export default HowItWorks;
+export default Difference;
