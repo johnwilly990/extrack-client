@@ -61,3 +61,11 @@ export const reviews = [
       "ExTrack helped me to really understand where my money is going towards, I was able to cut down my costs significantly!",
   },
 ];
+
+export const accountLinks = [{ link: "login" }, { link: "sign-up" }];
+
+export const companyLinks = [
+  { link: "about" },
+  { link: "privacy" },
+  { link: "terms" },
+];
