@@ -8,7 +8,7 @@ const NavBar = () => {
 
   return (
     <nav className="bg-forestGreen">
-      <div className="flex justify-between items-center mx-[14px] py-[13px] md:mx-[32px] md:py-[20px]">
+      <div className="flex justify-between items-center px-[14px] py-[13px] md:px-[32px] md:py-[20px] md:m-auto lg:max-w-[1280px]">
         <img src={mainLogo} alt="main logo" />
         <div className="md:hidden">
           <Hamburger
@@ -29,9 +29,9 @@ const NavBar = () => {
           </Link>
           <Link
             to="/login"
-            className="flex justify-center items-center bg-babyGreen w-[90px] h-[30px] rounded"
+            className="flex justify-center items-center bg-babyGreen w-[90px] h-[30px] rounded hover:bg-onyx"
           >
-            <p className="text-green text-sm">Login</p>
+            <p className="text-green text-sm hover:text-white">Login</p>
           </Link>
         </div>
       </div>
@@ -39,18 +39,18 @@ const NavBar = () => {
         <div
           className={`${
             isActive === true
-              ? "flex flex-col items-center z-10 absolute bg-forestGreen w-full h-[25vh] md:hidden"
+              ? "flex flex-col items-center justify-center z-10 absolute bg-forestGreen w-full h-[25vh] md:hidden"
               : "hidden"
           }`}
         >
-          <Link to="/about" className="text-white mt-6">
-            About
+          <Link to="/about" className="text-white mt-6 uppercase">
+            about
           </Link>
           <Link
             to="/login"
-            className="flex justify-center items-center mt-3 mb-6 bg-babyGreen w-[80px] h-[40px] rounded"
+            className="flex justify-center items-center mt-3 mb-6 bg-babyGreen w-[80px] h-[40px] rounded uppercase hover:bg-onyx"
           >
-            <p className="text-green">Login</p>
+            <p className="text-green hover:text-white">login</p>
           </Link>
         </div>
       )}
