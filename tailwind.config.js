@@ -13,6 +13,7 @@ module.exports = {
         forestGreen: "#296346",
         green: "#2F9062",
         investmentGreen: "#9BDEBE",
+        onyx: "#363946",
       },
     },
   },
