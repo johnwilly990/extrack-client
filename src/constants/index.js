@@ -1,8 +1,10 @@
 import alisha from "../assets/images/alisha-li.jpg";
 import robert from "../assets/images/robert-burke.jpg";
 import john from "../assets/images/john-peng.jpg";
+import hero from "../assets/images/hero.jpg";
 
 export const heroValues = {
+  image: hero,
   title: "Welcome to ExTrack!",
   description:
     "ExTrack is a free expense tracking application. ExTrack allows you to enter and track your expenses in real-time, categorize them, and generate reports to understand their spending patterns. We aim to help you become more financially repsonsible, and viable, considering the current inflated market and economy!",
