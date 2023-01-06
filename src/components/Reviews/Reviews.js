@@ -30,7 +30,9 @@ const Reviews = () => {
   return (
     <>
       <div className="bg-babyGreen relative h-[33%] flex flex-col items-center px-4 py-8 md:px-[32px] md:py-[48px] md:m-auto">
-        <h2 className="text-2xl font-bold">See what our users have to say!</h2>
+        <h2 className="text-2xl text-center font-bold">
+          See what our users have to say!
+        </h2>
         <div className="max-w-full relative overflow-hidden ">
           {reviews.map((review, index) => (
             <Review

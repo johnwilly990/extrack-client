@@ -14,17 +14,4 @@ const Review = ({ image, name, review, carousel, index }) => {
   );
 };
 
-/*
-.slide {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  opacity: 0;
-  transition: opacity ease-in-out 0.4s;
-}
-.active-anim {
-  opacity: 1;
-}
-*/
-
 export default Review;
