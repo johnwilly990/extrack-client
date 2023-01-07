@@ -1,15 +1,21 @@
 import alisha from "../assets/images/alisha-li.jpg";
 import robert from "../assets/images/robert-burke.jpg";
 import john from "../assets/images/john-peng.jpg";
-import hero from "../assets/images/hero.jpg";
+import landingHeroImg from "../assets/images/hero.jpg";
+import aboutHeroImg from "../assets/images/about-hero.jpg";
+import monthToMonth from "../assets/images/month-to-month.jpg";
+import kpi from "../assets/images/kpi.png";
 
-export const heroValues = {
-  image: hero,
-  title: "Welcome to ExTrack!",
-  description:
-    "ExTrack is a free expense tracking application. ExTrack allows you to enter and track your expenses in real-time, categorize them, and generate reports to understand their spending patterns. We aim to help you become more financially repsonsible, and viable, considering the current inflated market and economy!",
-  cta: "Sign Up for Free!",
-};
+// Landing Page Constants
+export const landingHero = [
+  {
+    image: landingHeroImg,
+    title: "Welcome to ExTrack!",
+    description:
+      "ExTrack is a free expense tracking application. ExTrack allows you to enter and track your expenses in real-time, categorize them, and generate reports to understand their spending patterns. We aim to help you become more financially repsonsible, and viable, considering the current inflated market and economy!",
+    cta: "Sign Up for Free!",
+  },
+];
 
 export const howItWorks = {
   title: "How ExTrack Works",
@@ -62,6 +68,35 @@ export const reviews = [
   },
 ];
 
+// About Page Constants
+export const aboutHero = [
+  {
+    image: aboutHeroImg,
+    title: "Save and make money!",
+    description:
+      "Our aim is to help you save and make money. ExTrack provides in-depth analysis of your financial patterns so you can make informed and educated decisions of your spending and saving habits!",
+    cta: "Go To Features",
+  },
+];
+
+export const features = [
+  {
+    id: 1,
+    image: monthToMonth,
+    title: "Month to Month Analysis",
+    description:
+      "One of the best ways to view your financial progression is seeing how your current spending compares to your previous. That's why we to month to month analysis. Through graph visualisations, you can see how much of your income is left over at the end of each month compared to the previous month.",
+  },
+  {
+    id: 2,
+    image: kpi,
+    title: "Key Performace Indicators (KPI)",
+    description:
+      "KPIs help you to understand and meet your goals. Through charts and graphs, we provide an exact breakdown of where you income went towards what helping you to cut down, or invest more, into different areas of your financial planning.",
+  },
+];
+
+// Footer Constants
 export const accountLinks = [{ link: "login" }, { link: "sign-up" }];
 
 export const companyLinks = [
