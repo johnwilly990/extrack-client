@@ -25,8 +25,15 @@ const Feature = ({ id, image, title, description }) => {
         <img
           src={image}
           alt={title}
-          className="w-full rounded md:w-[375px] md:h-[275px]"
+          className="w-full rounded md:w-[320px] md:h-[275px]"
         />
+        <a
+          href="https://www.flaticon.com/free-icons/data"
+          title="data icons"
+          className="text-[2px]"
+        >
+          Data icons created by photo3idea_studio - Flaticon
+        </a>
       </div>
     </div>
   );
