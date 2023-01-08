@@ -96,6 +96,38 @@ export const features = [
   },
 ];
 
+// Input Constants
+export const signUpInputName = [
+  {
+    type: "text",
+    name: "first_name",
+    placeholder: "First Name",
+  },
+  {
+    type: "text",
+    name: "last_name",
+    placeholder: "Last Name",
+  },
+];
+
+export const signUpInput = [
+  {
+    type: "email",
+    name: "username",
+    placeholder: "Enter Email",
+  },
+  {
+    type: "password",
+    name: "password",
+    placeholder: "Enter Password",
+  },
+  {
+    type: "password",
+    name: "confirm_password",
+    placeholder: "Confirm Password",
+  },
+];
+
 // Footer Constants
 export const accountLinks = [{ link: "login" }, { link: "sign-up" }];
 
