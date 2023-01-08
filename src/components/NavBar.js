@@ -9,7 +9,9 @@ const NavBar = () => {
   return (
     <nav className="bg-forestGreen">
       <div className="flex justify-between items-center px-[14px] py-[13px] md:px-[32px] md:py-[20px] md:m-auto lg:max-w-[1280px]">
-        <img src={mainLogo} alt="main logo" />
+        <Link to="/">
+          <img src={mainLogo} alt="main logo" />
+        </Link>
         <div className="md:hidden">
           <Hamburger
             color="#ffffff"
