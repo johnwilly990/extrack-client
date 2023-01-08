@@ -4,7 +4,7 @@ const Feature = ({ id, image, title, description }) => {
   return (
     <div
       id="features"
-      className="flex flex-col px-6 py-8 md:px-16 md:py-12 md:flex-row-reverse md:justify-between lg:px-[200px] lg:py-[60px] lg:mx-auto lg:max-w-[1280px]"
+      className="bg-babyGreen flex flex-col px-6 py-8 md:px-16 md:py-12 md:flex-row-reverse md:justify-between lg:px-[200px] lg:py-[60px] lg:mx-auto lg:max-w-[1280px]"
     >
       <div
         className={`md:flex md:flex-col md:w-1/2 ${
