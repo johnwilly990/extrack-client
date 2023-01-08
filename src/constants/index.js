@@ -3,7 +3,7 @@ import robert from "../assets/images/robert-burke.jpg";
 import john from "../assets/images/john-peng.jpg";
 import landingHeroImg from "../assets/images/hero.jpg";
 import aboutHeroImg from "../assets/images/about-hero.jpg";
-import monthToMonth from "../assets/images/month-to-month.jpg";
+import monthToMonth from "../assets/images/month-to-month.png";
 import kpi from "../assets/images/kpi.png";
 
 // Landing Page Constants
