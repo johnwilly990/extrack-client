@@ -9,7 +9,7 @@ const Footer = () => {
     <footer className="bg-forestGreen px-4 py-6 md:px-[32px] md:py-[48px]">
       <div className="flex flex-wrap justify-between mb-6 md:border-b-2 md:m-auto lg:max-w-[1280px] ">
         <div className="flex flex-col pb-4 mb-4 w-1/2 border-b-2 md:w-1/3 md:border-none">
-          <h2 className="text-lg text-white font-bold uppercase mb-4">
+          <h2 className="text-sm text-white font-bold uppercase mb-4">
             Account
           </h2>
           {accountLinks.map((link, index) => (
@@ -17,7 +17,7 @@ const Footer = () => {
           ))}
         </div>
         <div className="flex flex-col pb-4 mb-4 w-1/2 border-b-2 md:w-1/3 md:border-none">
-          <h2 className="text-lg text-white font-bold uppercase mb-4">
+          <h2 className="text-sm text-white font-bold uppercase mb-4">
             Company
           </h2>
           {companyLinks.map((link, index) => (
@@ -25,7 +25,7 @@ const Footer = () => {
           ))}
         </div>
         <div className="flex justify-between w-full md:w-1/3 md:flex-col md:justify-start">
-          <h2 className="hidden text-lg text-white font-bold uppercase mb-4 md:block">
+          <h2 className="hidden text-sm text-white font-bold uppercase mb-4 md:block">
             Social
           </h2>
           <div className="flex justify-between w-full md:justify-start">
@@ -41,13 +41,15 @@ const Footer = () => {
       <div className="hidden md:flex md:justify-between md:m-auto md:pt-6 lg:max-w-[1280px]">
         <div className="flex">
           <Link to="/terms">
-            <p className="text-xs text-white mr-[4px]">Terms & Conditions |</p>
+            <p className="text-[8px] text-white mr-[4px]">
+              Terms & Conditions |
+            </p>
           </Link>
           <Link to="/privacy">
-            <p className="text-xs text-white">Privacy Policy</p>
+            <p className="text-[8px] text-white">Privacy Policy</p>
           </Link>
         </div>
-        <p className="text-xs text-white">© 2023 All Rights Reserved.</p>
+        <p className="text-[8px] text-white">© 2023 All Rights Reserved.</p>
       </div>
     </footer>
   );
