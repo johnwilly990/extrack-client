@@ -128,6 +128,19 @@ export const signUpInput = [
   },
 ];
 
+export const loginInput = [
+  {
+    type: "email",
+    name: "username",
+    placeholder: "Enter Email",
+  },
+  {
+    type: "password",
+    name: "password",
+    placeholder: "Enter Password",
+  },
+];
+
 // Footer Constants
 export const accountLinks = [{ link: "login" }, { link: "sign-up" }];
 
