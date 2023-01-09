@@ -1,10 +1,11 @@
-import SideNavBar from "../components/NavBar/SideNavBar";
+import ProfileNavBar from "../components/NavBar/ProfileNavBar";
 
 const Dashboard = () => {
   return (
-    <main>
-      <SideNavBar />
-    </main>
+    <>
+      <ProfileNavBar />
+      <main></main>
+    </>
   );
 };
 
