@@ -1,6 +1,6 @@
 import { features } from "../../constants";
 import Feature from "./Feature";
-import BtnCta from "../BtnCta";
+import BtnCta from "../BtnCta/BtnCta";
 
 const Features = () => {
   return (

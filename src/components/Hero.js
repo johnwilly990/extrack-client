@@ -1,4 +1,4 @@
-import BtnCta from "./BtnCta";
+import BtnCta from "./BtnCta/BtnCta";
 
 const Hero = ({ image, title, description, cta }) => {
   return (
