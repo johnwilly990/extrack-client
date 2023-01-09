@@ -1,10 +1,20 @@
+// Review imports
 import alisha from "../assets/images/alisha-li.jpg";
 import robert from "../assets/images/robert-burke.jpg";
 import john from "../assets/images/john-peng.jpg";
+
+// Hero imports
 import landingHeroImg from "../assets/images/hero.jpg";
 import aboutHeroImg from "../assets/images/about-hero.jpg";
 import monthToMonth from "../assets/images/month-to-month.png";
 import kpi from "../assets/images/kpi.png";
+
+// Side NavBar imports
+import dollar from "../assets/icons/dollar.svg";
+import overview from "../assets/icons/overview.svg";
+import reports from "../assets/icons/reports.svg";
+import avatar from "../assets/icons/avatar.svg";
+import logout from "../assets/icons/logout.svg";
 
 // Landing Page Constants
 export const landingHero = [
@@ -148,4 +158,31 @@ export const companyLinks = [
   { link: "about" },
   { link: "privacy" },
   { link: "terms" },
+];
+
+// Side NavBar Constants
+export const sideNavBar = [
+  {
+    image: overview,
+    heading: "Overview",
+  },
+  {
+    image: dollar,
+    heading: "Expenses",
+  },
+  {
+    image: reports,
+    heading: "Reports",
+  },
+];
+
+export const sideNavBarProfile = [
+  {
+    image: avatar,
+    heading: "Profile",
+  },
+  {
+    image: logout,
+    heading: "Logout",
+  },
 ];
