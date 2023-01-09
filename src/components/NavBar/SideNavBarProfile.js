@@ -16,7 +16,7 @@ const SideNavBarProfile = () => {
       <img src={profile} alt="profile avatar" className="w-[48px] h-[48px]" />
       <div className="flex flex-col items-center">
         <p className="text-onyx mt-6">John Kim</p>
-        <p className="text-onyx">
+        <p className="text-onyx text-center">
           Extracker since {date().month}, {date().year}
         </p>
       </div>
