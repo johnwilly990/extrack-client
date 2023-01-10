@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import BtnCtaAdd from "../BtnCta/BtnCtaAdd";
+import BtnCtaAdd from "../BtnCta/BtnCtaAddIncome";
 import DashboardDescription from "./OverviewDescription";
 import DashboardVisuals from "./OverviewVisuals";
 
