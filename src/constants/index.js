@@ -186,3 +186,11 @@ export const sideNavBarProfile = [
     heading: "Logout",
   },
 ];
+
+// Dashboard Constants
+export const dashboardValues = [
+  { heading: "Monthly Payments" },
+  { heading: "Flexible Expenses" },
+  { heading: "Savings" },
+  { heading: "Investments" },
+];
