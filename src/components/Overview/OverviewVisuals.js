@@ -1,13 +1,13 @@
-import DashboardValueCard from "./DashboardValueCard";
+import OverviewValueCard from "./OverviewValueCard";
 import { dashboardValues } from "../../constants";
 import PieChart from "../Charts/PieChart";
 
-const DashboardVisuals = ({ userData }) => {
+const OverviewVisuals = ({ userData }) => {
   return (
     <>
       <div className="flex flex-wrap justify-between lg:w-1/2">
         {dashboardValues.map((value, index) => (
-          <DashboardValueCard key={index} {...value} userData={userData} />
+          <OverviewValueCard key={index} {...value} userData={userData} />
         ))}
       </div>
       <div className="hidden lg:w-1/2 lg:h-[370px] lg:flex lg:justify-end">
@@ -17,4 +17,4 @@ const DashboardVisuals = ({ userData }) => {
   );
 };
 
-export default DashboardVisuals;
+export default OverviewVisuals;

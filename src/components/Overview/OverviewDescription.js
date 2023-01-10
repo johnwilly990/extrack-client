@@ -1,7 +1,7 @@
 import { useState } from "react";
 import info from "../../assets/icons/info.svg";
 
-const DashboardDescription = ({ userData }) => {
+const OverviewDescription = ({ userData }) => {
   const [infoShow, setInfoShow] = useState(false);
   return (
     <>
@@ -43,4 +43,4 @@ const DashboardDescription = ({ userData }) => {
   );
 };
 
-export default DashboardDescription;
+export default OverviewDescription;

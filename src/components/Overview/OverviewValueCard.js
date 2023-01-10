@@ -1,4 +1,4 @@
-const DashboardValueCard = ({ heading, userData }) => {
+const OverviewValueCard = ({ heading, userData }) => {
   return (
     <div
       className={`flex flex-col items-center justify-center w-[45%] h-[120px] mb-6 gap-3 rounded py-4 shadow-xl md:h-[200px] lg:h-[180px] ${
@@ -32,4 +32,4 @@ const DashboardValueCard = ({ heading, userData }) => {
   );
 };
 
-export default DashboardValueCard;
+export default OverviewValueCard;
