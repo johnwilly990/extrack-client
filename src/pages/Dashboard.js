@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import OverviewInfo from "../components/Overview/OverviewInfo";
 import ProfileNavBar from "../components/NavBar/ProfileNavBar";
+import ExpensesInfo from "../components/Expenses/ExpensesInfo";
 
 const URL = process.env.REACT_APP_URL;
 
@@ -11,7 +12,7 @@ const Dashboard = () => {
   const [userData, setUserData] = useState({});
   const [failedAuth, setFailedAuth] = useState(false);
   const [counter, setCounter] = useState();
-  const [currentPage, setCurrentPage] = useState("overview");
+  const [currentPage, setCurrentPage] = useState("expenses");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,8 +29,6 @@ const Dashboard = () => {
 
     fetchData();
   }, [authToken, counter]);
-
-  console.log(currentPage);
 
   if (authToken === false)
     return (
@@ -62,8 +61,10 @@ const Dashboard = () => {
             counter={counter}
             setCounter={setCounter}
             failedAuth={failedAuth}
+            currentPage={currentPage}
           />
         )}
+        {currentPage === "expenses" && <ExpensesInfo userData={userData} />}
       </main>
     </>
   );
