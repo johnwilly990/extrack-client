@@ -3,19 +3,16 @@ import RemainingBalance from "../RemainingBalance";
 import ExpenseMonthSelect from "./ExpensesMonthSelect";
 import ExpensesCategorySelect from "./ExpensesCategorySelect";
 import ExpenseCategoryHeadings from "./ExpenseCategoryHeadings";
-import ExpensesHeading from "./ExpensesHeading";
 import BtnCtaAddEntry from "../BtnCta/BtnCtaAddEntry";
 import SecondarySideNavBar from "../NavBar/SecondarySideNavBar";
-import { months, expensesHeadings, dashboardValues } from "../../constants";
-import ExpenseEntry from "./ExpenseEntry";
-import ExpenseEntryMobile from "./ExpenseEntryMobile";
+import { months, dashboardValues } from "../../constants";
+import GetEntries from "./Entries/GetEntries";
 
 const ExpensesInfo = ({ userData }) => {
   const date = new Date();
   const monthAtm = months[date.getMonth()];
   const restOfMonths = months.filter((current) => current !== monthAtm);
-
-  const [currentCategory, setCurrentCategory] = useState("monthly");
+  const [currentCategory, setCurrentCategory] = useState("recurring");
   const [currentMonth, setCurrentMonth] = useState(monthAtm);
 
   return (
@@ -52,17 +49,7 @@ const ExpensesInfo = ({ userData }) => {
         <div className="hidden md:flex md:justify-end md:px-8 md:w-full md:mb-4 lg:px-0">
           <BtnCtaAddEntry text="Entry" />
         </div>
-        <div className="flex justify-between bg-investmentGreen px-4 py-2 md:justify-start md:px-8 lg:rounded-t">
-          {expensesHeadings.map((heading, index) => (
-            <ExpensesHeading key={index} heading={heading} />
-          ))}
-        </div>
-        <div className="bg-babyGreen px-4 py-2 md:px-8">
-          <ExpenseEntry />
-        </div>
-        <div className="bg-investments px-4 py-2 md:hidden">
-          <ExpenseEntryMobile />
-        </div>
+        <GetEntries currentCategory={currentCategory} />
       </section>
     </>
   );

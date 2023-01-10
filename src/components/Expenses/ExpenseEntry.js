@@ -1,13 +1,13 @@
 import edit from "../../assets/icons/edit.svg";
 import deleteIcon from "../../assets/icons/delete.svg";
 
-const ExpenseEntry = () => {
+const ExpenseEntry = ({ data }) => {
   return (
     <div className="flex justify-between md:justify-start md:border-b-[1px] md:border-investmentGreen md:pb-2 md:mb-2">
-      <p className="w-1/3 text-onyx md:w-1/5">Rent</p>
-      <p className="w-1/3 text-onyx md:w-1/5">Rent</p>
-      <p className="w-1/3 text-onyx md:w-1/5">$1000</p>
-      <p className="w-[50%] hidden md:w-[33%] md:block">
+      <p className="w-1/3 text-onyx md:w-1/5">{data.category}</p>
+      <p className="w-1/3 text-onyx md:w-1/5">{data.item_name}</p>
+      <p className="w-1/3 text-onyx md:w-1/5">{data.amount}</p>
+      <p className="w-[50%] hidden md:w-[31%] md:block">
         {new Date().getMonth()}
       </p>
       <div className="hidden md:flex">
