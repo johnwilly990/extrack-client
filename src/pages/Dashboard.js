@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import DashboardInfo from "../components/Dashboard/DashboardInfo";
 import ProfileNavBar from "../components/NavBar/ProfileNavBar";
@@ -9,7 +10,6 @@ const Dashboard = () => {
   const authToken = sessionStorage.getItem("authToken");
   const [userData, setUserData] = useState({});
   const [failedAuth, setFailedAuth] = useState(false);
-  const [remainingIncome, setRemainingIncome] = useState(0);
   const [counter, setCounter] = useState();
 
   useEffect(() => {
@@ -19,7 +19,6 @@ const Dashboard = () => {
           headers: { Authorization: `Bearer: ${authToken}` },
         });
         setUserData(user.data);
-        setRemainingIncome(user.data.budget_amount);
         setFailedAuth(false);
       } catch {
         setFailedAuth(true);
@@ -29,11 +28,19 @@ const Dashboard = () => {
     fetchData();
   }, [authToken, counter]);
 
+  if (authToken === false) return setFailedAuth(true);
+
   return (
     <>
       <main className="lg:flex">
-        <ProfileNavBar registeredDate={userData.created_at} />
-        <DashboardInfo userData={userData} authToken={authToken} />
+        {authToken && <ProfileNavBar registeredDate={userData.created_at} />}
+        <DashboardInfo
+          userData={userData}
+          authToken={authToken}
+          counter={counter}
+          setCounter={setCounter}
+          failedAuth={failedAuth}
+        />
       </main>
     </>
   );
