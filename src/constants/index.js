@@ -209,3 +209,5 @@ export const months = [
   "Nov",
   "Dec",
 ];
+
+export const expensesHeadings = ["Category", "Name", "Assigned", "Date"];
