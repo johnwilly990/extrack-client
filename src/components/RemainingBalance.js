@@ -3,7 +3,7 @@ import info from "../assets/icons/info.svg";
 const RemainingBalance = ({ userData, setInfoShow, currentPage }) => {
   return (
     <>
-      <h3 className="flex text-xl relative mb-4 md:mr-6">
+      <h3 className="flex text-xl relative mb-4 md:mr-4 md:text-2xl">
         Remaining income for{" "}
         {new Date().toLocaleString("default", { month: "long" })}
         {currentPage === "overview" && currentPage === "reports" ? (
