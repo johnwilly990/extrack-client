@@ -27,8 +27,8 @@ const ExpensesInfo = ({ userData }) => {
         currentCategory={currentCategory}
         setCurrentCategory={setCurrentCategory}
       />
-      <section className="lg:w-[60%] lg:p-[64px]">
-        <div className="flex flex-col justify-center items-center px-[48px] py-14 md:flex-row md:items-baseline">
+      <section className="lg:w-[60%] lg:py-8 lg:px-16">
+        <div className="flex flex-col justify-center items-center px-[48px] py-14 md:flex-row md:items-baseline lg:py-0 lg:pb-16">
           <RemainingBalance userData={userData} />
         </div>
         <div className="flex flex-col items-center bg-babyGreen mb-8 md:flex-row md:px-8 lg:hidden">
@@ -49,10 +49,10 @@ const ExpensesInfo = ({ userData }) => {
             ))}
           </div>
         </div>
-        <div className="hidden md:flex md:justify-end md:px-8 md:w-full md:mb-4">
+        <div className="hidden md:flex md:justify-end md:px-8 md:w-full md:mb-4 lg:px-0">
           <BtnCtaAddEntry text="Entry" />
         </div>
-        <div className="flex justify-between bg-investmentGreen px-4 py-2 md:justify-start md:px-8">
+        <div className="flex justify-between bg-investmentGreen px-4 py-2 md:justify-start md:px-8 lg:rounded-t">
           {expensesHeadings.map((heading, index) => (
             <ExpensesHeading key={index} heading={heading} />
           ))}
