@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import axios from "axios";
 import BtnCtaAdd from "../BtnCta/BtnCtaAdd";
 import DashboardDescription from "./OverviewDescription";
@@ -11,13 +10,7 @@ const initialValues = {
 
 const URL = process.env.REACT_APP_URL;
 
-const OverviewInfo = ({
-  userData,
-  authToken,
-  counter,
-  setCounter,
-  failedAuth,
-}) => {
+const OverviewInfo = ({ userData, authToken, counter, setCounter }) => {
   const [income, setIncome] = useState(false);
   const [input, setInput] = useState(initialValues);
 
