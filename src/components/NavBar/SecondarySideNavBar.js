@@ -4,7 +4,7 @@ import { dashboardValues } from "../../constants";
 
 const SecondarySideNavBar = ({
   setCurrentMonth,
-  monthAtm,
+  currentMonth,
   restOfMonths,
   currentCategory,
   setCurrentCategory,
@@ -13,7 +13,7 @@ const SecondarySideNavBar = ({
     <nav className="hidden bg-babyGreen lg:block lg:w-[20%] lg:py-8">
       <ExpenseMonthSelect
         setCurrentMonth={setCurrentMonth}
-        monthAtm={monthAtm}
+        currentMonth={currentMonth}
         restOfMonths={restOfMonths}
       />
       {dashboardValues.map((heading, index) => (

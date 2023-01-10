@@ -22,7 +22,7 @@ const ExpensesInfo = ({ userData }) => {
     <>
       <SecondarySideNavBar
         setCurrentMonth={setCurrentMonth}
-        monthAtm={monthAtm}
+        currentMonth={currentMonth}
         restOfMonths={restOfMonths}
         currentCategory={currentCategory}
         setCurrentCategory={setCurrentCategory}
