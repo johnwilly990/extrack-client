@@ -189,7 +189,7 @@ export const sideNavBarProfile = [
 
 // Dashboard Constants
 export const dashboardValues = [
-  { heading: "Monthly Payments", value: "monthly" },
+  { heading: "Monthly Payments", value: "recurring" },
   { heading: "Flexible Expenses", value: "flexible" },
   { heading: "Savings", value: "savings" },
   { heading: "Investments", value: "investments" },
@@ -210,4 +210,9 @@ export const months = [
   "Dec",
 ];
 
-export const expensesHeadings = ["Category", "Name", "Assigned", "Date"];
+export const expensesHeadings = [
+  "Category",
+  "Name",
+  "Assigned",
+  "Date Entered",
+];
