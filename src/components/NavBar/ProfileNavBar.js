@@ -43,6 +43,7 @@ const ProfileNavBar = ({ registeredDate, setCurrentPage }) => {
         <SideNavBar
           registeredDate={registeredDate}
           setCurrentPage={setCurrentPage}
+          setIsActive={setIsActive}
         />
       </div>
       {isActive ? (
@@ -50,6 +51,7 @@ const ProfileNavBar = ({ registeredDate, setCurrentPage }) => {
           isActive={isActive}
           registeredDate={registeredDate}
           setCurrentPage={setCurrentPage}
+          setIsActive={setIsActive}
         />
       ) : (
         ""

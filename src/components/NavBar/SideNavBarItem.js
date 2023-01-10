@@ -1,11 +1,14 @@
-const SideNavBarItem = ({ image, heading, setCurrentPage }) => {
+const SideNavBarItem = ({ image, heading, setCurrentPage, setIsActive }) => {
   const handlePageChange = () => {
     if (heading === "Overview") {
       setCurrentPage("overview");
+      setIsActive(false);
     } else if (heading === "Expenses") {
       setCurrentPage("expenses");
+      setIsActive(false);
     } else {
       setCurrentPage("reports");
+      setIsActive(false);
     }
   };
 

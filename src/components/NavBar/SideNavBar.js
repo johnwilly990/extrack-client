@@ -5,7 +5,7 @@ import settings from "../../assets/icons/settings.svg";
 import SideNavBarProfile from "./SideNavBarProfile";
 import extendedLogo from "../../assets/logos/extended-logo.svg";
 
-const SideNavBar = ({ registeredDate, setCurrentPage }) => {
+const SideNavBar = ({ registeredDate, setCurrentPage, setIsActive }) => {
   return (
     <div className="flex flex-col items-center justify-start z-10 absolute bg-forestGreen w-full h-full pt-16 px-14 md:w-1/3 md:px-8 md:py-8 lg:w-full lg:relative lg:z-0 lg:h-[100vh]">
       <img
@@ -14,7 +14,12 @@ const SideNavBar = ({ registeredDate, setCurrentPage }) => {
         className="hidden mb-[80px] lg:block"
       />
       {sideNavBar.map((item, index) => (
-        <SideNavBarItem key={index} {...item} setCurrentPage={setCurrentPage} />
+        <SideNavBarItem
+          key={index}
+          {...item}
+          setCurrentPage={setCurrentPage}
+          setIsActive={setIsActive}
+        />
       ))}
       <div className="border-b-[1px] border-white w-full" />
       <div className="h-[28%]">
