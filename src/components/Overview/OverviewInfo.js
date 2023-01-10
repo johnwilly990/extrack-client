@@ -10,7 +10,13 @@ const initialValues = {
 
 const URL = process.env.REACT_APP_URL;
 
-const OverviewInfo = ({ userData, authToken, counter, setCounter }) => {
+const OverviewInfo = ({
+  userData,
+  authToken,
+  counter,
+  setCounter,
+  currentPage,
+}) => {
   const [income, setIncome] = useState(false);
   const [input, setInput] = useState(initialValues);
 
@@ -39,7 +45,7 @@ const OverviewInfo = ({ userData, authToken, counter, setCounter }) => {
 
   return (
     <section className="flex flex-col justify-center px-6 py-8 lg:w-full md:px-[48px]">
-      <DashboardDescription userData={userData} />
+      <DashboardDescription userData={userData} currentPage={currentPage} />
       <div className="flex flex-col justify-center items-center mb-14">
         <BtnCtaAdd
           text="Income"
