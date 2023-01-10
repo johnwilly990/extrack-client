@@ -1,8 +1,6 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const BtnCtaProfile = ({ image, heading }) => {
-  const navigate = useNavigate();
-
   const handleLogout = () => {
     sessionStorage.clear();
   };
