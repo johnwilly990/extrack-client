@@ -18,6 +18,7 @@ module.exports = {
         investments: "rgba(155, 222, 190, 0.25)",
         expenses: "rgba(47, 144, 98, 0.5)",
         savings: "rgba(47, 144, 98, 0.75)",
+        selectedState: "rgba(41, 99, 70, 0.25)",
       },
     },
   },
