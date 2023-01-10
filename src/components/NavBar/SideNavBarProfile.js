@@ -2,11 +2,11 @@ import { sideNavBarProfile } from "../../constants";
 import profile from "../../assets/icons/profile.svg";
 import BtnCtaProfile from "../BtnCta/BtnCtaProfile";
 
-const SideNavBarProfile = () => {
-  const date = () => {
-    const date = new Date();
+const SideNavBarProfile = ({ registeredDate }) => {
+  const getDate = () => {
+    const date = new Date(registeredDate);
     const year = date.getFullYear();
-    const month = date.toLocaleString("default", { month: "short" });
+    const month = date.toLocaleString("default", { month: "long" });
 
     return { year, month };
   };
@@ -17,7 +17,7 @@ const SideNavBarProfile = () => {
       <div className="flex flex-col items-center">
         <p className="text-onyx mt-6">John Kim</p>
         <p className="text-onyx text-center">
-          Extracker since {date().month}, {date().year}
+          Extracker since {getDate().month}, {getDate().year}
         </p>
       </div>
       <div className="mt-8">

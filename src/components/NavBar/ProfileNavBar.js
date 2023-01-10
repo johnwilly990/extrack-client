@@ -5,7 +5,7 @@ import SideNavBar from "./SideNavBar";
 import mainLogo from "../../assets/logos/main-logo.svg";
 import profileWhite from "../../assets/icons/profile-white.svg";
 
-const ProfileNavBar = () => {
+const ProfileNavBar = ({ registeredDate }) => {
   const [isActive, setIsActive] = useState(false);
 
   return (
@@ -40,9 +40,13 @@ const ProfileNavBar = () => {
         </div>
       </div>
       <div className="hidden lg:block">
-        <SideNavBar />
+        <SideNavBar registeredDate={registeredDate} />
       </div>
-      {isActive ? <SideNavBar isActive={isActive} /> : ""}
+      {isActive ? (
+        <SideNavBar isActive={isActive} registeredDate={registeredDate} />
+      ) : (
+        ""
+      )}
     </nav>
   );
 };
