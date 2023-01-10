@@ -1,6 +1,19 @@
-const SideNavBarItem = ({ image, heading }) => {
+const SideNavBarItem = ({ image, heading, setCurrentPage }) => {
+  const handlePageChange = () => {
+    if (heading === "Overview") {
+      setCurrentPage("overview");
+    } else if (heading === "Expenses") {
+      setCurrentPage("expenses");
+    } else {
+      setCurrentPage("reports");
+    }
+  };
+
   return (
-    <div className="flex w-[100px] mb-8">
+    <div
+      onClick={handlePageChange}
+      className="flex w-[100px] mb-8 cursor-pointer"
+    >
       <div className="flex justify-center">
         <img src={image} alt={heading} className="mr-2 w-[24px] h-[24px]" />
       </div>
