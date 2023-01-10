@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import DashboardValueCard from "./DashboardValueCard";
 import { dashboardValues } from "../../constants";
 import BtnCtaAdd from "../BtnCta/BtnCtaAdd";
+import PieChart from "../Charts/PieChart";
+import info from "../../assets/icons/info.svg";
 
 const initialValues = {
   income_amount: "",
@@ -11,31 +12,11 @@ const initialValues = {
 
 const URL = process.env.REACT_APP_URL;
 
-const DashboardInfo = () => {
+const DashboardInfo = ({ userData, authToken }) => {
   const [income, setIncome] = useState(false);
   const [input, setInput] = useState(initialValues);
-  const [userData, setUserData] = useState({});
-  const [failedAuth, setFailedAuth] = useState(false);
-  const [remainingIncome, setRemainingIncome] = useState(0);
   const [counter, setCounter] = useState();
-  const authToken = sessionStorage.getItem("authToken");
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const user = await axios.get(`${URL}profile`, {
-          headers: { Authorization: `Bearer: ${authToken}` },
-        });
-        setUserData(user.data);
-        setRemainingIncome(user.data.budget_amount);
-        setFailedAuth(false);
-      } catch {
-        setFailedAuth(true);
-      }
-    };
-
-    fetchData();
-  }, [authToken, counter]);
+  const [infoShow, setInfoShow] = useState(false);
 
   const handleInputChange = (e) => {
     e.preventDefault();
@@ -61,7 +42,7 @@ const DashboardInfo = () => {
   };
 
   return (
-    <section className="flex flex-col px-6 py-8 lg:w-[70%] md:px-[48px]">
+    <section className="flex flex-col justify-center px-6 py-8 lg:w-full md:px-[48px]">
       <div className="w-full">
         <h2 className="text-2xl font-bold mb-6">
           Welcome back, {userData.first_name} {userData.last_name}!
@@ -70,16 +51,18 @@ const DashboardInfo = () => {
           Displayed is your breakdown of your balance for the current month as
           well as the alloted values for each category of expense/asset
         </p>
-        <p className="text-sm text-onyx mb-12">
-          Remaining income displayed is your total remaining after all
-          deductions have been made from your income <br /> Remaining = (income
-          - flexible expenses - monthly payments - savings - investments)
-        </p>
       </div>
       <div className="flex flex-col justify-center items-center md:flex-row md:items-baseline">
-        <h3 className="text-xl relative mb-4 md:mr-6">
+        <h3 className="flex text-xl relative mb-4 md:mr-6">
           Remaining income for{" "}
-          {new Date().toLocaleString("default", { month: "long" })}:
+          {new Date().toLocaleString("default", { month: "long" })}
+          <img
+            src={info}
+            alt="info"
+            onMouseOver={() => setInfoShow((prev) => !prev)}
+            className="w-[12px] h-[12px]"
+          />
+          :
         </h3>
         <div className="flex bg-balance text-xl rounded-full mb-6">
           <p className="px-[14px] py-[6px] font-bold">
@@ -87,7 +70,14 @@ const DashboardInfo = () => {
           </p>
         </div>
       </div>
-      <div className="mb-14">
+      {infoShow && (
+        <p className="text-sm text-onyx mb-12">
+          Remaining income displayed is your total remaining after all
+          deductions have been made from your income <br /> Remaining = (income
+          - flexible expenses - monthly payments - savings - investments)
+        </p>
+      )}
+      <div className="flex flex-col justify-center items-center mb-14">
         <BtnCtaAdd text="Income" onClick={setIncome} />
         {income && (
           <form onSubmit={handleSubmit} className="flex justify-center mt-6">
@@ -95,7 +85,7 @@ const DashboardInfo = () => {
               type="number"
               name="income_amount"
               placeholder="Enter Income"
-              value={income.income_amount}
+              value={income?.income_amount}
               onChange={handleInputChange}
               className="outline-forestGreen border-2 border-green solid rounded p-[4px] mr-4"
             />
@@ -105,10 +95,15 @@ const DashboardInfo = () => {
           </form>
         )}
       </div>
-      <div className="flex flex-wrap justify-between lg:w-1/2">
-        {dashboardValues.map((value, index) => (
-          <DashboardValueCard key={index} {...value} {...userData} />
-        ))}
+      <div className="lg:flex lg:justify-between">
+        <div className="flex flex-wrap justify-between lg:w-1/2">
+          {dashboardValues.map((value, index) => (
+            <DashboardValueCard key={index} {...value} userData={userData} />
+          ))}
+        </div>
+        <div className="hidden lg:w-1/2 lg:h-[370px] lg:flex lg:justify-end">
+          <PieChart userData={userData} />
+        </div>
       </div>
       <div className="flex flex-col items-center mt-8 lg:hidden">
         <p className="text-sm text-green underline mb-6">See Expenses</p>
