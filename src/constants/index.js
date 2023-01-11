@@ -16,6 +16,10 @@ import reports from "../assets/icons/reports.svg";
 import avatar from "../assets/icons/avatar.svg";
 import logout from "../assets/icons/logout.svg";
 
+// Modal Button imports
+import cancel from "../assets/icons/cancel.svg";
+import addWhite from "../assets/icons/add-white.svg";
+
 // Landing Page Constants
 export const landingHero = [
   {
@@ -210,9 +214,43 @@ export const months = [
   "Dec",
 ];
 
-export const expensesHeadings = [
-  "Category",
-  "Name",
-  "Assigned",
-  "Date Entered",
+export const expensesHeadings = ["Category", "Name", "Assigned"];
+
+export const newEntryInput = [
+  { type: "text", placeholder: "Enter entry name", name: "item_name" },
+  { type: "number", placeholder: "Amount to assign", name: "amount" },
+];
+
+export const monthlySelect = [
+  "Car Payment",
+  "Rent",
+  "Bills",
+  "Loans",
+  "Subscriptions",
+];
+
+export const flexibleSelect = [
+  "Dining",
+  "Entertainment",
+  "Groceries",
+  "Apparel",
+  "Electronics",
+  "Beauty",
+  "Miscellaneous",
+];
+
+export const investmentsSelect = ["Stocks", "NFT", "Crypto", "Gold"];
+
+export const savingsSelect = [
+  "Bank Account",
+  "TFSA",
+  "RRSP",
+  "RESP",
+  "RRIF",
+  "RDSP",
+];
+
+export const modalBtn = [
+  { image: cancel, text: "Cancel" },
+  { image: addWhite, text: "Add Entry" },
 ];
