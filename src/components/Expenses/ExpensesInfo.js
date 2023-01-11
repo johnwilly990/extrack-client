@@ -6,7 +6,7 @@ import ExpenseCategoryHeadings from "./ExpenseCategoryHeadings";
 import BtnCtaAddEntry from "../BtnCta/BtnCtaAddEntry";
 import SecondarySideNavBar from "../NavBar/SecondarySideNavBar";
 import GetEntries from "./Entries/GetEntries";
-import { months, dashboardValues } from "../../constants";
+import { dashboardValues } from "../../constants";
 import useAddEntry from "../../utils/useAddEntry";
 import useUpdateEntry from "../../utils/useUpdateEntry";
 import useDeleteEntry from "../../utils/useDeleteEntry";
@@ -29,12 +29,13 @@ const ExpensesInfo = ({
   setDeleteModal,
   counter,
   setCounter,
+  currentPage,
+  currentMonth,
+  setCurrentMonth,
+  restOfMonths,
+  monthAtm,
 }) => {
-  const date = new Date();
-  const monthAtm = months[date.getMonth()];
-  const restOfMonths = months.filter((current) => current !== monthAtm);
   const [currentCategory, setCurrentCategory] = useState("recurring");
-  const [currentMonth, setCurrentMonth] = useState(monthAtm);
   const [input, setInput] = useState(initialValues);
   const [addEntry] = useAddEntry(
     input,
@@ -79,6 +80,7 @@ const ExpensesInfo = ({
         restOfMonths={restOfMonths}
         currentCategory={currentCategory}
         setCurrentCategory={setCurrentCategory}
+        currentPage={currentPage}
       />
       <section className="lg:w-[60%] lg:py-8 lg:px-16">
         <div className="flex flex-col justify-center items-center px-[48px] py-14 md:flex-row md:items-baseline lg:py-0 lg:pb-16">

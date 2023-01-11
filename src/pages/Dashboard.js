@@ -4,11 +4,17 @@ import axios from "axios";
 import OverviewInfo from "../components/Overview/OverviewInfo";
 import ProfileNavBar from "../components/NavBar/ProfileNavBar";
 import ExpensesInfo from "../components/Expenses/ExpensesInfo";
+import ReportsInfo from "../components/Reports/ReportsInfo";
+import { months } from "../constants";
 
 const URL = process.env.REACT_APP_URL;
 
 const Dashboard = () => {
+  const date = new Date();
+  const monthAtm = months[date.getMonth()];
+  const restOfMonths = months.filter((current) => current !== monthAtm);
   const authToken = sessionStorage.getItem("authToken");
+  const [currentMonth, setCurrentMonth] = useState(monthAtm);
   const [userData, setUserData] = useState({});
   const [failedAuth, setFailedAuth] = useState(false);
   const [counter, setCounter] = useState();
@@ -79,8 +85,14 @@ const Dashboard = () => {
             setDeleteModal={setDeleteModal}
             counter={counter}
             setCounter={setCounter}
+            currentPage={currentPage}
+            monthAtm={monthAtm}
+            currentMonth={currentMonth}
+            setCurrentMonth={setCurrentMonth}
+            restOfMonths={restOfMonths}
           />
         )}
+        {currentPage === "reports" && <ReportsInfo />}
       </main>
     </>
   );
