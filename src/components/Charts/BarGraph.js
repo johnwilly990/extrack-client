@@ -1,30 +1,56 @@
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import { Pie } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
+import { Bar } from "react-chartjs-2";
 
-ChartJS.register(ArcElement, Tooltip, Legend);
-const PieChart = ({ userData }) => {
-  const fundsPercent = (fund, income) => (fund / income) * 100;
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
+const BarGraph = ({ userData }) => {
+  const fundsPercent = (fund, income) => {
+    return (fund / income) * 100;
+  };
 
   const options = {
+    responsive: true,
     plugins: {
       legend: {
         position: "bottom",
       },
       title: {
         display: true,
-        text: "User Funds breakdown",
+        text: "User Funds Breakdown (X-Axis is category, Y-Axis is your income where 0 is 0% and 100 is 100%)",
+      },
+    },
+    scales: {
+      y: {
+        max: 100,
       },
     },
   };
 
+  const labels = [
+    "Savings",
+    "Investments",
+    "Monthly Payments",
+    "Flexible Expenses",
+    "Remaing Income",
+  ];
+
   const data = {
-    labels: [
-      "Savings",
-      "Investments",
-      "Monthly Payments",
-      "Flexible Expenses",
-      "Remaing Income",
-    ],
+    labels,
     datasets: [
       {
         label: "% of Income",
@@ -52,16 +78,15 @@ const PieChart = ({ userData }) => {
           "rgba(47, 144, 98, 0.5)",
           "rgba(155, 222, 190, 0.5)",
         ],
-        borderWidth: 1,
       },
     ],
   };
 
   return (
     <>
-      <Pie options={options} data={data} />
+      <Bar options={options} data={data} height={"300"} />
     </>
   );
 };
 
-export default PieChart;
+export default BarGraph;
