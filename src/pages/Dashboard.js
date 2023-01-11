@@ -13,6 +13,7 @@ const Dashboard = () => {
   const [failedAuth, setFailedAuth] = useState(false);
   const [counter, setCounter] = useState();
   const [currentPage, setCurrentPage] = useState("expenses");
+  const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -64,7 +65,16 @@ const Dashboard = () => {
             currentPage={currentPage}
           />
         )}
-        {currentPage === "expenses" && <ExpensesInfo userData={userData} />}
+        {currentPage === "expenses" && (
+          <ExpensesInfo
+            userData={userData}
+            authToken={authToken}
+            openModal={openModal}
+            setOpenModal={setOpenModal}
+            counter={counter}
+            setCounter={setCounter}
+          />
+        )}
       </main>
     </>
   );
