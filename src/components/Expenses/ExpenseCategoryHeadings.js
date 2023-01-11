@@ -5,22 +5,37 @@ const ExpenseCategoryHeadings = ({
   value,
   currentCategory,
   setCurrentCategory,
+  currentReport,
+  setCurrentReport,
+  currentPage,
 }) => {
+  const reportsOrExpenses = () => {
+    if (currentPage === "expenses") {
+      return currentCategory;
+    } else {
+      return currentReport;
+    }
+  };
+
   return (
     <div
-      onClick={() => setCurrentCategory(value)}
+      onClick={
+        currentPage === "reports"
+          ? () => setCurrentReport(value)
+          : () => setCurrentCategory(value)
+      }
       className={`hidden md:cursor-pointer md:flex lg:my-10 lg:justify-between lg:px-2 ${
-        value === currentCategory ? "lg:bg-selectedState" : ""
-      }`}
+        value === reportsOrExpenses() ? "lg:bg-selectedState" : ""
+      } ${currentPage === "reports" ? "sm:block cursor-pointer" : ""}`}
     >
       <p
         className={`text-sm lg:text-md lg:mr-8 lg:text-onyx ${
-          value === currentCategory ? "font-bold underline lg:p-2" : ""
+          value === reportsOrExpenses() ? "font-bold underline lg:p-2" : ""
         }`}
       >
         {heading}
       </p>
-      {value === currentCategory && (
+      {value === reportsOrExpenses() && (
         <img src={arrow} alt="arrow" className="hidden lg:block lg:px-2" />
       )}
     </div>

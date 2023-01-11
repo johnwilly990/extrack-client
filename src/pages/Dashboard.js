@@ -92,7 +92,14 @@ const Dashboard = () => {
             restOfMonths={restOfMonths}
           />
         )}
-        {currentPage === "reports" && <ReportsInfo />}
+        {currentPage === "reports" && (
+          <ReportsInfo
+            currentPage={currentPage}
+            currentMonth={currentMonth}
+            setCurrentMonth={setCurrentMonth}
+            restOfMonths={restOfMonths}
+          />
+        )}
       </main>
     </>
   );
