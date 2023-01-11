@@ -1,4 +1,4 @@
-import { dashboardValues } from "../../constants";
+import { expensesCategoryValues } from "../../constants";
 
 const ExpensesCategorySelect = ({ setCurrentCategory }) => {
   return (
@@ -7,7 +7,7 @@ const ExpensesCategorySelect = ({ setCurrentCategory }) => {
       className="py-4 md:hidden"
     >
       <select className="bg-babyGreen rounded outline-forestGreen">
-        {dashboardValues.map((category, index) => (
+        {expensesCategoryValues.map((category, index) => (
           <option key={index} value={category.value}>
             {category.heading}
           </option>

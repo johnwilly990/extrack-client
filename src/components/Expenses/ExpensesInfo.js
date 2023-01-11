@@ -6,7 +6,7 @@ import ExpenseCategoryHeadings from "./ExpenseCategoryHeadings";
 import BtnCtaAddEntry from "../BtnCta/BtnCtaAddEntry";
 import SecondarySideNavBar from "../NavBar/SecondarySideNavBar";
 import GetEntries from "./Entries/GetEntries";
-import { dashboardValues } from "../../constants";
+import { expensesCategoryValues } from "../../constants";
 import useAddEntry from "../../utils/useAddEntry";
 import useUpdateEntry from "../../utils/useUpdateEntry";
 import useDeleteEntry from "../../utils/useDeleteEntry";
@@ -94,7 +94,7 @@ const ExpensesInfo = ({
           />
           <ExpensesCategorySelect setCurrentCategory={setCurrentCategory} />
           <div className="md:flex md:justify-between md:w-full">
-            {dashboardValues.map((heading, index) => (
+            {expensesCategoryValues.map((heading, index) => (
               <ExpenseCategoryHeadings
                 key={index}
                 {...heading}
