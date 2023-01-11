@@ -94,6 +94,7 @@ const Dashboard = () => {
         )}
         {currentPage === "reports" && (
           <ReportsInfo
+            userData={userData}
             currentPage={currentPage}
             currentMonth={currentMonth}
             setCurrentMonth={setCurrentMonth}
