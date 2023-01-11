@@ -5,6 +5,7 @@ const URL = process.env.REACT_APP_URL;
 
 export default function useGetData(authToken, currentPage) {
   const [data, setData] = useState([]);
+  const [counter, setCounter] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -14,13 +15,14 @@ export default function useGetData(authToken, currentPage) {
         });
 
         setData(entries.data);
+        setCounter(counter + 1);
       } catch (err) {
         console.log(err);
       }
     };
 
     fetchData();
-  }, [authToken, currentPage]);
+  }, [authToken, currentPage, counter]);
 
-  return [data];
+  return [data, counter];
 }
