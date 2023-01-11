@@ -14,12 +14,11 @@ const ExpenseEntry = ({ data }) => {
   };
 
   return (
-    <div className="flex justify-between md:justify-start md:border-b-[1px] md:border-investmentGreen md:pb-2 md:mb-2">
-      <p className="w-1/3 text-onyx md:w-1/5">{data.category}</p>
-      <p className="w-1/3 text-onyx md:w-1/5">{data.item_name}</p>
-      <p className="w-1/3 text-onyx md:w-1/5">${data.amount}</p>
-      <p className="w-[50%] hidden md:w-[31%] md:block">{convertTime()}</p>
-      <div className="hidden md:flex">
+    <div className="flex justify-between items-center border-b-[1px] border-investmentGreen md:justify-star md:pb-2 md:mb-2">
+      <p className="w-1/4 text-onyx ">{data.category}</p>
+      <p className="w-1/4 text-onyx ">{data.item_name}</p>
+      <p className="w-1/4 text-onyx ">${data.amount}</p>
+      <div className="flex justify-end w-1/4">
         <img src={edit} alt="edit" className="w-[16px] h-[16px] mr-4" />
         <img src={deleteIcon} alt="delete" className="w-[16px] h-[16px]" />
       </div>

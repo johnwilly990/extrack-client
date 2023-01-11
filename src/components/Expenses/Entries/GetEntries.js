@@ -1,7 +1,6 @@
 import { expensesHeadings } from "../../../constants";
 import ExpensesHeading from "../ExpensesHeading";
 import ExpenseEntry from "../ExpenseEntry";
-import ExpenseEntryMobile from "../ExpenseEntryMobile";
 import useGetData from "../../../utils/useGetData";
 
 const GetEntries = ({ currentCategory }) => {
@@ -10,18 +9,18 @@ const GetEntries = ({ currentCategory }) => {
 
   return (
     <>
-      <div className="flex justify-between bg-investmentGreen px-4 py-2 md:justify-start md:px-8 lg:rounded-t">
-        {expensesHeadings.map((heading, index) => (
-          <ExpensesHeading key={index} heading={heading} />
-        ))}
+      <div className="bg-investmentGreen px-4 py-2  md:px-8 lg:rounded-t">
+        <div className="flex justify-between items-center">
+          {expensesHeadings.map((heading, index) => (
+            <ExpensesHeading key={index} heading={heading} />
+          ))}
+          <div className="invisible w-1/4"></div>
+        </div>
       </div>
       <div className="bg-babyGreen px-4 py-2 md:px-8">
         {data.map((data) => (
           <ExpenseEntry key={data.id} data={data} />
         ))}
-      </div>
-      <div className="bg-investments px-4 py-2 md:hidden">
-        <ExpenseEntryMobile data={data} />
       </div>
     </>
   );

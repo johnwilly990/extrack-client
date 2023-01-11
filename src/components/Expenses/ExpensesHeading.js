@@ -1,9 +1,7 @@
-import React from "react";
-
 const ExpensesHeading = ({ heading }) => {
   return (
     <p
-      className={`w-1/3 text-onyx font-bold md:w-1/5 ${
+      className={`w-1/4 text-onyx font-bold md:w-1/4 ${
         heading === "Date" ? "hidden md:block" : ""
       }`}
     >
