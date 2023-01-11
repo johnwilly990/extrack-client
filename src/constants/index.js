@@ -16,10 +16,6 @@ import reports from "../assets/icons/reports.svg";
 import avatar from "../assets/icons/avatar.svg";
 import logout from "../assets/icons/logout.svg";
 
-// Modal Button imports
-import cancel from "../assets/icons/cancel.svg";
-import addWhite from "../assets/icons/add-white.svg";
-
 // Landing Page Constants
 export const landingHero = [
   {
@@ -248,9 +244,4 @@ export const savingsSelect = [
   "RESP",
   "RRIF",
   "RDSP",
-];
-
-export const modalBtn = [
-  { image: cancel, text: "Cancel" },
-  { image: addWhite, text: "Add Entry" },
 ];
