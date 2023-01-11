@@ -5,15 +5,71 @@ import ExpensesCategorySelect from "./ExpensesCategorySelect";
 import ExpenseCategoryHeadings from "./ExpenseCategoryHeadings";
 import BtnCtaAddEntry from "../BtnCta/BtnCtaAddEntry";
 import SecondarySideNavBar from "../NavBar/SecondarySideNavBar";
-import { months, dashboardValues } from "../../constants";
 import GetEntries from "./Entries/GetEntries";
+import { months, dashboardValues } from "../../constants";
+import useAddEntry from "../../utils/useAddEntry";
+import useUpdateEntry from "../../utils/useUpdateEntry";
+import useDeleteEntry from "../../utils/useDeleteEntry";
+import useGetData from "../../utils/useGetData";
 
-const ExpensesInfo = ({ userData }) => {
+const initialValues = {
+  item_name: "",
+  amount: 0,
+  category: "",
+};
+
+const ExpensesInfo = ({
+  userData,
+  authToken,
+  addModal,
+  setAddModal,
+  updateModal,
+  setUpdateModal,
+  deleteModal,
+  setDeleteModal,
+  counter,
+  setCounter,
+}) => {
   const date = new Date();
   const monthAtm = months[date.getMonth()];
   const restOfMonths = months.filter((current) => current !== monthAtm);
   const [currentCategory, setCurrentCategory] = useState("recurring");
   const [currentMonth, setCurrentMonth] = useState(monthAtm);
+  const [input, setInput] = useState(initialValues);
+  const [addEntry] = useAddEntry(
+    input,
+    authToken,
+    setAddModal,
+    setCounter,
+    setInput,
+    counter,
+    initialValues,
+    currentCategory
+  );
+  const [updateEntry] = useUpdateEntry(
+    currentCategory,
+    updateModal.id,
+    input,
+    authToken,
+    setUpdateModal,
+    setCounter,
+    counter
+  );
+  const [deleteEntry] = useDeleteEntry(
+    currentCategory,
+    deleteModal.id,
+    authToken,
+    setDeleteModal,
+    setCounter,
+    counter
+  );
+  const [data] = useGetData(authToken, currentCategory);
+
+  const handleInputChange = (e) => {
+    e.preventDefault();
+    const { name, value } = e.target;
+    setInput({ ...input, [name]: value });
+  };
 
   return (
     <>
@@ -46,10 +102,29 @@ const ExpensesInfo = ({ userData }) => {
             ))}
           </div>
         </div>
-        <div className="hidden md:flex md:justify-end md:px-8 md:w-full md:mb-4 lg:px-0">
-          <BtnCtaAddEntry text="Entry" />
+        <div className="flex justify-center mb-8 md:justify-end md:px-8 md:w-full md:mb-4 lg:px-0">
+          <BtnCtaAddEntry
+            text="Entry"
+            addModal={addModal}
+            setAddModal={setAddModal}
+            currentCategory={currentCategory}
+            handleInputChange={handleInputChange}
+            handleAddEntry={addEntry}
+            input={input}
+          />
         </div>
-        <GetEntries currentCategory={currentCategory} />
+        <GetEntries
+          currentCategory={currentCategory}
+          data={data}
+          updateModal={updateModal}
+          setUpdateModal={setUpdateModal}
+          deleteModal={deleteModal}
+          setDeleteModal={setDeleteModal}
+          handleInputChange={handleInputChange}
+          handleUpdateEntry={updateEntry}
+          handleDeleteEntry={deleteEntry}
+          input={input}
+        />
       </section>
     </>
   );

@@ -12,8 +12,10 @@ const Dashboard = () => {
   const [userData, setUserData] = useState({});
   const [failedAuth, setFailedAuth] = useState(false);
   const [counter, setCounter] = useState();
-  const [currentPage, setCurrentPage] = useState("expenses");
-  const [openModal, setOpenModal] = useState(false);
+  const [currentPage, setCurrentPage] = useState("overview");
+  const [addModal, setAddModal] = useState(false);
+  const [updateModal, setUpdateModal] = useState(false);
+  const [deleteModal, setDeleteModal] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -69,8 +71,12 @@ const Dashboard = () => {
           <ExpensesInfo
             userData={userData}
             authToken={authToken}
-            openModal={openModal}
-            setOpenModal={setOpenModal}
+            addModal={addModal}
+            setAddModal={setAddModal}
+            updateModal={updateModal}
+            setUpdateModal={setUpdateModal}
+            deleteModal={deleteModal}
+            setDeleteModal={setDeleteModal}
             counter={counter}
             setCounter={setCounter}
           />

@@ -1,12 +1,19 @@
 import { expensesHeadings } from "../../../constants";
 import ExpensesHeading from "../ExpensesHeading";
 import ExpenseEntry from "../ExpenseEntry";
-import useGetData from "../../../utils/useGetData";
 
-const GetEntries = ({ currentCategory }) => {
-  const authToken = sessionStorage.getItem("authToken");
-  const [data, setData] = useGetData(authToken, currentCategory);
-
+const GetEntries = ({
+  data,
+  currentCategory,
+  updateModal,
+  setUpdateModal,
+  deleteModal,
+  setDeleteModal,
+  handleInputChange,
+  handleUpdateEntry,
+  handleDeleteEntry,
+  input,
+}) => {
   return (
     <>
       <div className="bg-investmentGreen px-4 py-2  md:px-8 lg:rounded-t">
@@ -19,7 +26,19 @@ const GetEntries = ({ currentCategory }) => {
       </div>
       <div className="bg-babyGreen px-4 py-2 md:px-8">
         {data.map((data) => (
-          <ExpenseEntry key={data.id} data={data} />
+          <ExpenseEntry
+            key={data.id}
+            data={data}
+            currentCategory={currentCategory}
+            updateModal={updateModal}
+            setUpdateModal={setUpdateModal}
+            deleteModal={deleteModal}
+            setDeleteModal={setDeleteModal}
+            handleInputChange={handleInputChange}
+            handleUpdateEntry={handleUpdateEntry}
+            handleDeleteEntry={handleDeleteEntry}
+            input={input}
+          />
         ))}
       </div>
     </>
