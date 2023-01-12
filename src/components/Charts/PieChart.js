@@ -12,8 +12,8 @@ const PieChart = ({ userData }) => {
       },
       title: {
         display: true,
-        text: "User Funds breakdown",
       },
+      maintainAspectRatio: false,
     },
   };
 
@@ -59,7 +59,12 @@ const PieChart = ({ userData }) => {
 
   return (
     <>
-      <Pie options={options} data={data} />
+      <Pie
+        options={(options, { maintainAspectRatio: false })}
+        data={data}
+        width={100}
+        height={50}
+      />
     </>
   );
 };

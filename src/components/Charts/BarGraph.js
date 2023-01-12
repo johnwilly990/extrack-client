@@ -31,7 +31,6 @@ const BarGraph = ({ userData }) => {
       },
       title: {
         display: true,
-        text: "User Funds Breakdown (X-Axis is category, Y-Axis is your income where 0 is 0% and 100 is 100%)",
       },
     },
     scales: {
