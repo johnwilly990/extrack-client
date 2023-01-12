@@ -83,7 +83,7 @@ const ExpensesInfo = ({
         currentPage={currentPage}
       />
       <section className="lg:w-[60%] lg:py-8 lg:px-16">
-        <div className="flex flex-col justify-center items-center px-[48px] py-14 md:flex-row md:items-baseline lg:py-0 lg:pb-16">
+        <div className="flex flex-col justify-center items-center py-14 px-6 lg:justify-between lg:px-0 lg:py-0 lg:pb-16">
           <RemainingBalance userData={userData} />
         </div>
         <div className="flex flex-col items-center bg-babyGreen mb-8 md:flex-row md:px-8 lg:hidden">

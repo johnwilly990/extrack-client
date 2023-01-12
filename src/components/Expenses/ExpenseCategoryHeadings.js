@@ -24,7 +24,7 @@ const ExpenseCategoryHeadings = ({
           ? () => setCurrentReport(value)
           : () => setCurrentCategory(value)
       }
-      className={`hidden md:cursor-pointer md:flex lg:my-10 lg:justify-between lg:px-2 ${
+      className={`hidden md:cursor-pointer md:flex lg:mt-10 lg:justify-between lg:px-2 ${
         value === reportsOrExpenses() ? "lg:bg-selectedState" : ""
       } ${currentPage === "reports" ? "sm:block cursor-pointer" : ""}`}
     >

@@ -14,7 +14,7 @@ const OverviewDescription = ({ userData }) => {
           well as the alloted values for each category of expense/asset
         </p>
       </div>
-      <div className="flex flex-col justify-center items-center md:flex-row md:items-baseline">
+      <div className="flex flex-col justify-center items-center">
         <RemainingBalance userData={userData} setInfoShow={setInfoShow} />
       </div>
       {infoShow && (
