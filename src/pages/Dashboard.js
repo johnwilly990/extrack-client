@@ -17,7 +17,7 @@ const Dashboard = () => {
   const [currentMonth, setCurrentMonth] = useState(monthAtm);
   const [userData, setUserData] = useState({});
   const [failedAuth, setFailedAuth] = useState(false);
-  const [counter, setCounter] = useState();
+  const [counter, setCounter] = useState(0);
   const [currentPage, setCurrentPage] = useState("overview");
   const [addModal, setAddModal] = useState(false);
   const [updateModal, setUpdateModal] = useState(false);

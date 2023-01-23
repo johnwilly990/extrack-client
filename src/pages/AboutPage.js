@@ -11,7 +11,9 @@ const AboutPage = () => {
       {aboutHero.map((value, index) => (
         <Hero key={index} {...value} />
       ))}
-      <Features />
+      <div className="bg-babyGreen">
+        <Features />
+      </div>
       <Footer />
     </>
   );

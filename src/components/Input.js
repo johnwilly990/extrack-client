@@ -1,5 +1,4 @@
 import showPw from "../assets/icons/show-password.svg";
-import hidePw from "../assets/icons/hide-password.svg";
 
 const Input = ({
   type,
@@ -23,7 +22,7 @@ const Input = ({
           inputError && type === "password" ? "text-red-600 border-red-600" : ""
         }`}
       />
-      {name === "password" && (
+      {/* {name === "password" && (
         <img
           src={showPw}
           alt="password toggle"
@@ -36,7 +35,7 @@ const Input = ({
           alt="password toggle"
           className="absolute top-[71%] right-[10%]"
         />
-      )}
+      )} */}
     </>
   );
 };

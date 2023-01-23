@@ -8,7 +8,7 @@ const Features = () => {
       {features.map((feature) => (
         <Feature key={feature.id} {...feature} />
       ))}
-      <div className="px-6 pb-16 flex justify-center bg-babyGreen">
+      <div className="px-6 pb-8 flex justify-center bg-babyGreen">
         <BtnCta cta="Sign Up Now!" />
       </div>
     </>
